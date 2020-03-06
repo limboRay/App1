@@ -14,8 +14,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-@RestController
-@RequestMapping(value = "/")
 public class UserController {
 
     private UserRepository userRepository;
@@ -29,15 +27,15 @@ public class UserController {
 
 
 
-    @PostMapping(value = "/user/create")
+    @RequestMapping(value = "user/create", method={RequestMethod.POST, RequestMethod.GET})
     @ResponseStatus(HttpStatus.CREATED)//201
     public void create(
-            @RequestParam("first_name") String first_name,
-            @RequestParam("last_name") String last_name) {
-        userRepository.saveAndFlush(new User(first_name, last_name));
+            @RequestParam("first_name") String firstname,
+            @RequestParam("last_name") String lastname) {
+        userRepository.saveAndFlush(new User(firstname, lastname));
     }
 
-    @RequestMapping(value = "/user/get/all", method = RequestMethod.GET)
+    @RequestMapping(value = "user/get/all", method = RequestMethod.GET)
     public @ResponseBody String getAll() {
         List<User> users = userRepository.findAll();
 

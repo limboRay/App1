@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>jQuery Example</title>
+
+    <script type="text/javascript" src="/lib/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="/js/users.js"></script>
+</head>
+
+<body>
+<div>
+    <fieldset>
+        <legend>Создание нового сотрудника:</legend>
+        <p>Имя:</p>
+        <input id="first_name" type="text"/>
+        <p>Должность:</p>
+        <input id="last_name" type="text"/>
+        <hr/>
+        <input type="button" value="Добавить" onclick="createUser()"/>
+    </fieldset>
+</div>
+<div>
+    <fieldset>
+        <legend>Список добавленых юзеров</legend>
+        <input type="button" value="Обновить" onclick="getAllUsers()"/>
+        <div id="workspace"></div>
+    </fieldset>
+</div>
+</body>
+
+</html>

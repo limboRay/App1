@@ -41,9 +41,9 @@ function getAllUsers() {
                 jQuery('#body')
                     .append('<tr id="cur_row' + i + '"></tr>')
                 jQuery('#cur_row' + i)
-                    .append('<td id="employee_id">' + result[i].id + '</td>')
-                    .append('<td id="employee_name">' + result[i].first_name + '</td>')
-                    .append('<td id="employee_last_name>' + result[i].last_name + '</td>')
+                    .append('<td id="user_id">' + result[i].id + '</td>')
+                    .append('<td id="user_name">' + result[i].first_name + '</td>')
+                    .append('<td id="user_last_name>' + result[i].last_name + '</td>')
             }
         }
     })
